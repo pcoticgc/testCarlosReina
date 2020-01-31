@@ -16,33 +16,11 @@
     <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="./video/1.mp4"></video>
     <a-video src="#mivideo" position="0 0 0" rotation="270 0 0" ></a-video>     
     </a-marker>
-	  
-	<script> 
-      var m = document.querySelector("a-marker")
-      m.addEventListener("markerFound", (e)=>{
-      console.log("found")
-      var v = document.querySelector('#mivideo').play();
-})
-      m.addEventListener("markerLost", (e)=>{
-      console.log("lost")
-      var v = document.querySelector('#mivideo').pause();
-  
-})
-
-
-document.querySelector("button").addEventListener("click", (e)=>{
-	console.log("Activar Sonido")
-  var v = document.querySelector('#mivideo').muted=false;
-})
-     </script>  
-	  
-	  
-	  
-	  
-	  
+	<script src="playVideo.js"></script>	  
 	  
       <a-entity camera></a-entity>
     </a-scene>
+	
 </body>
 
 
