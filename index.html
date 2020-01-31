@@ -15,13 +15,13 @@
 	
 	<a-assets>
 	
-	<a-video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="./video/ecosistemaLitoral.mp4"></a-video>
+	<video  width="640" height="480" id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="./video/ecosistemaLitoral.mp4"></video>
     </a-assets>
 	
 	
 
     <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
-	<a-entity geometry="primitive: plane" scale="2 1 1" position="0 0 0" rotation="260 0 0" material="src: #mivideo"></a-entity>  
+	<a-entity geometry="primitive: plane" scale="1 1 1" position="0 0 0" rotation="260 0 0" material="src: #mivideo"></a-entity>  
     </a-marker>
 	<script src="playVideo.js"></script>	  
 	  
