@@ -25,7 +25,8 @@
 
     <a-marker preset="hiro">
     <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
-    <a-video src="#mivideo" position="0 0 0" rotation="270 0 0" ></a-video>
+    <a-entity geometry="primitive: plane" scale="2 1 1" position="0 0 0" rotation="270 0 0" material="src: #mivideo"></a-entity>  
+    <!--<a-video src="#mivideo" position="0 0 0" rotation="270 0 0" ></a-video> --> 
    
    <script> 
       var m = document.querySelector("a-marker")
