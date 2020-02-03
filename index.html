@@ -21,10 +21,16 @@
     </button>
   </div> --> 
   
-    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
+      <a-assets>
+        <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
+      </a-assets>
+
+
+
+
 
     <a-marker preset="hiro">
-    <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
     <a-video src="#mivideo" position="0 0 0" rotation="270 0 0" ></a-video>
    
    <script> 
