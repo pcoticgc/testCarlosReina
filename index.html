@@ -1,58 +1,34 @@
-
 <-DOCTYPE html>
 <html lang="es">
   <head>
-  <!-- Augmented Reality on the Web in 10 lines of html! https://github.com/jeromeetienne/ar.js --> 
-  <script src="https://aframe.io/releases/1.0.1/aframe.min.js"></script>
-  <!-- aframe-keyboard-controls.js Permite todas las accion utilizando el Teclado --> 
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/dev/aframe/build/aframe-ar.js"></script>
-  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Augmented Reality on the Web in 10 lines of html! https://github.com/jeromeetienne/ar.js --> 
+    <script src="https://aframe.io/releases/1.0.1/aframe.min.js"></script>
+    <!-- aframe-keyboard-controls.js Permite todas las accion utilizando el Teclado --> 
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/dev/aframe/build/aframe-ar.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+	<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
-
-
-
-
 <body style='margin : 0px; overflow: hidden;'>
-  <!-- <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-    <button>
-     Play Sound
-    </button>
-  </div> --> 
-  
-    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
-     
-    <a-marker preset="hiro">
-      <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
-      <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
-      <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
-   
-   <script> 
-      var m = document.querySelector("a-marker")
-      m.addEventListener("markerFound", (e)=>{
-      console.log("found")
-      var v = document.querySelector('#mivideo').play();
-})
-      m.addEventListener("markerLost", (e)=>{
-      console.log("lost")
-      var v = document.querySelector('#mivideo').pause();
-  
-})
 
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
+	
+	<a-assets>
+	
+	<video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="./video/ecosistemaLitoral.mp4"></video>
+    </a-assets>
+	
+	
 
-/*document.querySelector("button").addEventListener("click", (e)=>{
-	console.log("Activar Sonido")
-  var v = document.querySelector('#mivideo').muted=false;
-})*/
-     </script>
-     
-      </a-marker>
+    <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
+	<a-entity geometry="primitive: plane" scale="2 1 1" position="0 0 0" rotation="260 0 0" material="src: #mivideo"></a-entity>  
+    </a-marker>
+	<script src="playVideo.js"></script>	  
+	  
       <a-entity camera></a-entity>
     </a-scene>
+	
 </body>
-</html>
-
 
 
 
