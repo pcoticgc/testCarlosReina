@@ -13,21 +13,21 @@
             <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
                 <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/plomaDeEbre.mp4"></video>
-                <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
+                <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
+                <script> 
+                    var m = document.querySelector("a-marker")
+                    m.addEventListener("markerFound", (e)=>{
+                    console.log("found")
+                    var v = document.querySelector('#mivideo').play();
+                    })
+                    m.addEventListener("markerLost", (e)=>{
+                    console.log("lost")
+                    var v = document.querySelector('#mivideo').pause();
+                    })
+                </script>          
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
-        <script> 
-            var m = document.querySelector("a-marker")
-            m.addEventListener("markerFound", (e)=>{
-            console.log("found")
-            var v = document.querySelector('#mivideo').play();
-            })
-            m.addEventListener("markerLost", (e)=>{
-            console.log("lost")
-            var v = document.querySelector('#mivideo').pause();
-            })
-        </script>         
     </body>
 </html>
 
