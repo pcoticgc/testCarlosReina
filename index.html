@@ -10,14 +10,14 @@
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
-            <a-marker class="marker_01" id="mivideo" type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
+            <a-marker class="marker_01" id="mivideo_01" type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
-                <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
+                <video id="mivideo_01" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
                 <a-video src="#mivideo_01" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
             </a-marker>
-            <a-marker class="marker_02" id="mivideo" type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
+            <a-marker class="marker_02" id="mivideo_02" type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
-                <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/pattern-markerPlomaEbre.mp4"></video>
+                <video id="mivideo_02" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/pattern-markerPlomaEbre.mp4"></video>
                 <a-video src="#mivideo_02" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
             </a-marker>
             <a-entity camera></a-entity>
