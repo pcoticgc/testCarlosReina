@@ -22,7 +22,7 @@
             <a-entity camera></a-entity>
         </a-scene>
         <script> 
-            /* var m = document.querySelector(".liroralCat")
+            var m = document.querySelector(".liroralCat")
             m.addEventListener("markerFound", (e)=>{
             document.querySelector('#mivideo').play();
             })
@@ -36,20 +36,7 @@
                     })
                     m1.addEventListener("markerLost", (e)=>{
                     document.querySelector('#mivideo1').pause();
-                    }) */
-
-
-                    function startStopVideo(classMarker, srcVideo) {
-                        var m = document.querySelector(classMarker)
-                        m.addEventListener("markerFound", (e)=>{
-                        document.querySelector(srcVideo).play();
-                        })
-                        m.addEventListener("markerLost", (e)=>{
-                        document.querySelector(srcVideo).pause();
-                        })
-                    }
-                    startStopVideo("liroralCat", "#mivideo");
-                    startStopVideo("plomaEbre", "#mivideo1");
+                    })
         </script>          
     </body>
 </html>
