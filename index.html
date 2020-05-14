@@ -28,11 +28,11 @@
                 <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/plomaDeEbre.mp4"></video>
                 <a-video src="#mivideo1" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
                 <script> 
-                    var m = document.querySelector(".plomaEbre")
-                    m.addEventListener("markerFound", (e)=>{
+                    var m1 = document.querySelector(".plomaEbre")
+                    m1.addEventListener("markerFound", (e)=>{
                     document.querySelector('#mivideo1').play();
                     })
-                    m.addEventListener("markerLost", (e)=>{
+                    m1.addEventListener("markerLost", (e)=>{
                     document.querySelector('#mivideo1').pause();
                     })
                 </script>          
