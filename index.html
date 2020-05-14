@@ -10,15 +10,22 @@
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
-            <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
+            <a-marker ip="marke_01" type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
                 <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
                 <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
             </a-marker>
+            <!-- <a-marker type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
+                <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/plomaDeEbre.mp4"></video>
+                <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
+            </a-marker> -->
             <a-entity camera></a-entity>
         </a-scene>
+
+
+
         <script> 
-            var m = document.querySelector("a-marker")
+            var m = document.querySelector("marke_01")
             m.addEventListener("markerFound", (e)=>{
             console.log("found")
             var v = document.querySelector('#mivideo').play();
