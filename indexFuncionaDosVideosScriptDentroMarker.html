@@ -13,30 +13,31 @@
             <a-marker class="liroralCat" type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
                 <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
-                <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>             
+                <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
+                <script> 
+                    var m = document.querySelector(".liroralCat")
+                    m.addEventListener("markerFound", (e)=>{
+                    document.querySelector('#mivideo').play();
+                    })
+                    m.addEventListener("markerLost", (e)=>{
+                    document.querySelector('#mivideo').pause();
+                    })
+                </script>          
             </a-marker>
             <a-marker class="plomaEbre" type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
                 <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/plomaDeEbre.mp4"></video>
-                <a-video src="#mivideo1" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>          
-            </a-marker>
-            <a-entity camera></a-entity>
-        </a-scene>
-        <script> 
-            var m = document.querySelector(".liroralCat")
-            m.addEventListener("markerFound", (e)=>{
-            document.querySelector('#mivideo').play();
-            })
-            m.addEventListener("markerLost", (e)=>{
-            document.querySelector('#mivideo').pause();
-            })
-
-            var m1 = document.querySelector(".plomaEbre")
+                <a-video src="#mivideo1" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
+                <script> 
+                    var m1 = document.querySelector(".plomaEbre")
                     m1.addEventListener("markerFound", (e)=>{
                     document.querySelector('#mivideo1').play();
                     })
                     m1.addEventListener("markerLost", (e)=>{
                     document.querySelector('#mivideo1').pause();
                     })
-        </script>          
+                </script>          
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
     </body>
 </html>
