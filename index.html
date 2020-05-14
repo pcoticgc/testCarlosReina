@@ -15,15 +15,11 @@
                 <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
                 <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
             </a-marker>
-            <a-marker type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
-                <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/plomaDeEbre.mp4"></video>
-                <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>     
-            </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
 
 
-
+        
         <script> 
             var m = document.querySelector("a-marker")
             m.addEventListener("markerFound", (e)=>{
