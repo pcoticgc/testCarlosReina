@@ -26,24 +26,24 @@
 
         
         <script> 
-            var m = document.querySelector(".marker_01")
-            m.addEventListener("markerFound", (e)=>{
+            var m1 = document.querySelector(".marker_01")
+            m1.addEventListener("markerFound", (e)=>{
             console.log("found")
-            var v = document.querySelector('#mivideo_01').play();
+            var v1 = document.querySelector('#mivideo_01').play();
             })
-            m.addEventListener("markerLost", (e)=>{
+            m1.addEventListener("markerLost", (e)=>{
             console.log("lost")
-            var v = document.querySelector('#mivideo_01').pause();
+            var v1 = document.querySelector('#mivideo_01').pause();
             })
 
-            var m = document.querySelector(".marker_02")
-            m.addEventListener("markerFound", (e)=>{
+            var m2 = document.querySelector(".marker_02")
+            m2.addEventListener("markerFound", (e)=>{
             console.log("found")
-            var v = document.querySelector('#mivideo_02').play();
+            var v2 = document.querySelector('#mivideo_02').play();
             })
-            m.addEventListener("markerLost", (e)=>{
+            m2.addEventListener("markerLost", (e)=>{
             console.log("lost")
-            var v = document.querySelector('#mivideo_02').pause();
+            var v2 = document.querySelector('#mivideo_02').pause();
             })
         </script>         
     </body>
