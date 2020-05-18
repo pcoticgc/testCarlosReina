@@ -14,9 +14,11 @@
                 <!--02 3D model decaiment-->
                 <a-asset-item id="sentinelDeca-obj" src="models/sentinelDeca.obj"></a-asset-item>
                 <a-asset-item id="sentinelDeca-mtl" src="models/sentinelDeca.mtl"></a-asset-item>
-                <a-mixin id="propertiesSD" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-mixin>
             </a-assets>
             <!--02 3D model decaiment-->
+		    <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
+                <a-obj-model src="#sentinelDeca-obj" mtl="#sentinelDeca-mtl" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-obj-model>
+            </a-marker>
             <a-marker class="liroralCat" type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
                 <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
@@ -25,10 +27,6 @@
             <a-marker class="plomaEbre" type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
                 <video id="mivideo1" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/plomaDeEbre.mp4"></video>
                 <a-video src="#mivideo1" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>          
-            </a-marker>
-            <!--02 3D model decaiment-->
-		    <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
-                <a-entity mixin="propertiesSD" obj-model="obj: #sentinelDeca-obj; mtl: #sentinelDeca-mtl "></a-entity>
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
