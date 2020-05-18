@@ -10,6 +10,16 @@
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
+            <a-assets>
+                <!--02 3D model decaiment-->
+                <a-asset-item id="sentinelDeca-obj" src="models/sentinelDeca.obj"></a-asset-item>
+                <a-asset-item id="sentinelDeca-mtl" src="models/sentinelDeca.mtl"></a-asset-item>
+                <a-mixin id="propertiesSD" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-mixin>
+            </a-assets>
+            <!--02 3D model decaiment-->
+		    <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
+                <a-entity mixin="propertiesSD" obj-model="obj: #sentinelDeca-obj; mtl: #sentinelDeca-mtl "></a-entity>
+            </a-marker>
             <a-marker class="liroralCat" type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
                 <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
                 <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/ecosistemaLitoral.mp4"></video>
