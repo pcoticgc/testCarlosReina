@@ -7,44 +7,35 @@
   <!-- aframe-keyboard-controls.js Permite todas las accion utilizando el Teclado --> 
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/dev/aframe/build/aframe-ar.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
 </head>
 
 
 <!-- Funciona le he quitado el boton que da permiso para el sonido  -->
 
-<body style='margin : 0px; overflow: hidden;'>
-  <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+<body >
+  <!-- <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
     <button>
      Play Sound
     </button>
-  </div>
+  </div> -->
   
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
-     
-    <a-marker preset="hiro">
-      <!-- para ios la etiqueta video no puedo ponerla dentro de assets porque me sale desplazada y no puedo usar la etiqueta entity e de usar a-video--> 
-      <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
-      <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
+      
+      <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
+        <a-obj-model src="models/sentinelDeca.obj" mtl="models/sentinelDeca.mtl" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-obj-model>
+      </a-marker>
+      
+      
+      <a-marker preset="hiro">
+        <video id="mivideo" autoplay loop="true" muted src="video/1.mp4"></video>
+        <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
    
-   <script> 
-      var m = document.querySelector("a-marker")
-      m.addEventListener("markerFound", (e)=>{
-      console.log("found")
-      var v = document.querySelector('#mivideo').play();
-      })
-      m.addEventListener("markerLost", (e)=>{
-      console.log("lost")
-      var v = document.querySelector('#mivideo').pause();
-  
-      })
-
-
-      document.querySelector("button").addEventListener("click", (e)=>{
-	    console.log("Activar Sonido")
-      var v = document.querySelector('#mivideo').muted=false;
-      })
-     </script>
+        <script> 
+         
+          document.querySelector('#mivideo').play();
+         
+        </script>
      
       </a-marker>
       <a-entity camera></a-entity>
