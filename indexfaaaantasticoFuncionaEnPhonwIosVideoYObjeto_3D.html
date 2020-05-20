@@ -2,15 +2,14 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+  <!-- Augmented Reality on the Web in 10 lines of html! https://github.com/jeromeetienne/ar.js --> 
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- aframe-keyboard-controls.js Permite todas las accion utilizando el Teclado --> 
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/dev/aframe/build/aframe-ar.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
 </head>
-
-
 <body >
-  
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
       <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
         <a-obj-model src="models/sentinelDeca.obj" mtl="models/sentinelDeca.mtl" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-obj-model>
@@ -19,16 +18,8 @@
         <video id="mivideo" autoplay loop="true" muted src="video/1.mp4"></video>
         <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
         <script> 
-          var m = document.querySelector("a-marker")
-          m.addEventListener("markerFound", (e)=>{
-          console.log("found")
-          var v = document.querySelector('#mivideo').play();
-          })
-          m.addEventListener("markerLost", (e)=>{
-          console.log("lost")
-          var v = document.querySelector('#mivideo').pause();
-          })
-         </script>
+          document.querySelector('#mivideo').play(); 
+        </script>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
