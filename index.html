@@ -16,7 +16,7 @@
         <a-obj-model src="models/sentinelDeca.obj" mtl="models/sentinelDeca.mtl" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-obj-model>
       </a-marker>
       <a-marker preset="hiro">
-        <video id="mivideo" autoplay loop="true" muted src="video/1.mp4"></video>
+        <video id="mivideo" autoplay loop="true" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
         <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
         <script> 
           var m = document.querySelector("a-marker")
