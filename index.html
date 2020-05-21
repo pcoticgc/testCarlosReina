@@ -11,13 +11,8 @@
 </head>
 <body >
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
-      <a-assets>
-        <a-asset-item id="sentinelDeca-obj" src="models/sentinelDeca.obj"></a-asset-item>
-           <a-asset-item id="sentinelDeca-mtl" src="models/sentinelDeca.mtl"></a-asset-item>
-           <a-mixin id="propertiesSD" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-mixin>
-      </a-assets>
       <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
-        <a-entity mixin="propertiesSD" obj-model="obj: #sentinelDeca-obj; mtl: #sentinelDeca-mtl "></a-entity>
+        <a-obj-model src="models/sentinelDeca.obj" mtl="models/sentinelDeca.mtl" scale=".18 .18 .18" position ="0 0 0" rotation="0 0 0"></a-obj-model>
       </a-marker>
       <a-marker type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
         <video id="mivideoPlomaEbre" autoplay loop="true" muted src="video/plomaDeEbre.mp4"></video>
