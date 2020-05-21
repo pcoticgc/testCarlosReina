@@ -14,11 +14,18 @@
       <a-marker type="pattern" preset="custom" url="data/pattern-markerDe.patt">
         <a-obj-model src="models/sentinelDeca.obj" mtl="models/sentinelDeca.mtl" scale=".2 .2 .2" position ="0 0 0" rotation="0 0 0"></a-obj-model>
       </a-marker>
-      <a-marker preset="hiro">
-        <video id="mivideo" autoplay loop="true" muted src="video/1.mp4"></video>
-        <a-video src="#mivideo" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
+      <a-marker type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
+        <video id="mivideoPlomaEbre" autoplay loop="true" muted src="video/plomaDeEbre.mp4"></video>
+        <a-video src="#mivideoPlomaEbre" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
         <script> 
-          document.querySelector('#mivideo').play(); 
+          document.querySelector('#mivideoPlomaEbre').play(); 
+        </script>
+      </a-marker>
+      <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
+        <video id="mivideoLitoralCat" autoplay loop="true" muted src="video/ecosistemaLitoral.mp4"></video>
+        <a-video src="#mivideoLitoralCat" scale="2 1 1" position="0 0 0" rotation="270 0 0" ></a-video>
+        <script> 
+          document.querySelector('#mivideoLitoralCat').play(); 
         </script>
       </a-marker>
       <a-entity camera></a-entity>
